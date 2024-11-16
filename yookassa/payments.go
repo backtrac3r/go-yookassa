@@ -5,10 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	yooerror "github.com/rvinnie/yookassa-sdk-go/yookassa/errors"
-	"github.com/rvinnie/yookassa-sdk-go/yookassa/payment"
 	"io"
 	"net/http"
+
+	yooerror "github.com/backtrac3r/go-yookassa/yookassa/errors"
+	yoopayment "github.com/backtrac3r/go-yookassa/yookassa/payment"
 )
 
 const (

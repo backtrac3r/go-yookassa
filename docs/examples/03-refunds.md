@@ -6,15 +6,15 @@
 
 Часть способов оплаты (например, наличные) не поддерживают возвраты. [Какие платежи можно вернуть](https://yookassa.ru/developers/payment-methods/overview#all?lang=ru)
 
-* [Запрос на создание возврата](#Запрос-на-создание-возврата)
-* [Получить информацию о возврате](#Получить-информацию-о-возврате)
-* [Получить список возвратов с фильтрацией](#Получить-список-возвратов-с-фильтрацией)
+- [Запрос на создание возврата](#Запрос-на-создание-возврата)
+- [Получить информацию о возврате](#Получить-информацию-о-возврате)
+- [Получить список возвратов с фильтрацией](#Получить-список-возвратов-с-фильтрацией)
 
 ---
 
 ### Запрос на создание возврата
 
-[Создание возврата в документации](https://yookassa.ru/developers/api?lang=bash#create_refund?lang=ru)  
+[Создание возврата в документации](https://yookassa.ru/developers/api?lang=bash#create_refund?lang=ru)
 
 Создает возврат успешного платежа на указанную сумму. Платеж можно вернуть только в течение трех лет с момента его создания.
 Комиссия ЮKassa за проведение платежа не возвращается.
@@ -23,8 +23,8 @@
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
@@ -56,14 +56,14 @@ func main() {
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
     // Создаем yookassa клиента, указав идентификатор магазина и секретный ключ
     yooclient := yookassa.NewClient('<Store ID>', '<Secret key>')
-    // Создаем обработчик возвратов 
+    // Создаем обработчик возвратов
     refundHandler := yookassa.NewRefundHandler(client)
     // Получаем объект возврата
     refund, _ := refundHandler.FindRefund("2c87b72c-0015-5000-9000-172b6038152a")
@@ -86,14 +86,14 @@ func main() {
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
     // Создаем yookassa клиента, указав идентификатор магазина и секретный ключ
     yooclient := yookassa.NewClient('<Store ID>', '<Secret key>')
-    // Создаем обработчик возвратов 
+    // Создаем обработчик возвратов
     refundHandler := yookassa.NewRefundHandler(client)
     // Получаем список объектов возврата (последние 3 со статусом succeeded)
     refunds, err := refundHandler.FindRefunds(&yoorefund.RefundListFilter{

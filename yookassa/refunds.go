@@ -4,10 +4,11 @@ package yookassa
 import (
 	"encoding/json"
 	"fmt"
-	yooerror "github.com/rvinnie/yookassa-sdk-go/yookassa/errors"
-	"github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
 	"io"
 	"net/http"
+
+	yooerror "github.com/backtrac3r/go-yookassa/yookassa/errors"
+	yoorefund "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 const (

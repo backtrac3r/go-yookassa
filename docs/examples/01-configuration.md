@@ -1,8 +1,10 @@
 ## Настройки SDK API ЮKassa
 
 [Справочник API ЮKassa](https://yookassa.ru/developers/api)
-* [Аутентификация](#Аутентификация)
-* [Получение информации о магазине](#Получение-информации-о-магазине)
+
+- [Аутентификация](#Аутентификация)
+- [Получение информации о магазине](#Получение-информации-о-магазине)
+
 ---
 
 ### Аутентификация
@@ -10,10 +12,10 @@
 Для работы с API необходимо создать клиента, указав идентификатор магазина и секретный ключ.
 
 ```go
-import "github.com/rvinnie/yookassa-sdk-go"
+import "github.com/backtrac3r/go-yookassa"
 
 func main() {
-    client := yookassa.NewClient('<Идентификатор магазина>', '<Секретный ключ>')	
+    client := yookassa.NewClient('<Идентификатор магазина>', '<Секретный ключ>')
 }
 ```
 
@@ -24,7 +26,7 @@ func main() {
 После установки конфигурации можно проверить корректность данных, а также получить информацию о магазине.
 
 ```go
-import "github.com/rvinnie/yookassa-sdk-go/yookassa"
+import "github.com/backtrac3r/go-yookassa/yookassa"
 
 func main() {
     // Создаем yookassa клиента, указав идентификатор магазина и секретный ключ
@@ -35,15 +37,18 @@ func main() {
     settings, _ := settingsHandler.GetAccountSettings(nil)
 }
 ```
+
 В результате мы увидим примерно следующее:
+
 ```
-#0 dict(5) 
+#0 dict(5)
     ['account_id'] => str(6) "XXXXXX"
-    ['test'] => bool(True) 
-    ['fiscalization_enabled'] => bool(True) 
-    ['payment_methods'] => list(2) 
+    ['test'] => bool(True)
+    ['fiscalization_enabled'] => bool(True)
+    ['payment_methods'] => list(2)
         [0] => str(9) "yoo_money"
         [1] => str(9) "bank_card"
     ['status'] => str(7) "enabled"
 ```
+
 Подробнее про объект настроек в [документации к API](https://yookassa.ru/developers/api#me_object)

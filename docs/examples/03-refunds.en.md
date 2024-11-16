@@ -6,9 +6,9 @@ that was used to make the payment. [How to make refunds](https://yookassa.ru/dev
 
 Some payment methods (for example, cash) do not support refunds. [What payments can be refunded](https://yookassa.ru/developers/payment-methods/overview#all?lang=en)
 
-* [Request to create a refund](#Request-to-create-a-refund)
-* [Get refund information](#Get-refund-information)
-* [Get a list of refunds with filtering](#Get-a-list-of-refunds-with-filtering)
+- [Request to create a refund](#Request-to-create-a-refund)
+- [Get refund information](#Get-refund-information)
+- [Get a list of refunds with filtering](#Get-a-list-of-refunds-with-filtering)
 
 ---
 
@@ -23,8 +23,8 @@ In response to the request, the `Refund` object will come in the current status.
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
@@ -56,14 +56,14 @@ In response to the request, the `Refund` object will come in the current status.
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
     // Create a yookassa client by specifying the store ID and secret key
     yooclient := yookassa.NewClient('<Store ID>', '<Secret key>')
-    // Create a refund handler 
+    // Create a refund handler
     refundHandler := yookassa.NewRefundHandler(client)
     // Get the refund object
     refund, _ := refundHandler.FindRefund("2c87b72c-0015-5000-9000-172b6038152a")
@@ -86,14 +86,14 @@ the list fragment and the `next_cursor` parameter with a pointer to the next fra
 
 ```go
 import (
-    "github.com/rvinnie/yookassa-sdk-go/yookassa"
-    "github.com/rvinnie/yookassa-sdk-go/yookassa/refund"
+    "github.com/backtrac3r/go-yookassa/yookassa"
+    "github.com/backtrac3r/go-yookassa/yookassa/refund"
 )
 
 func main() {
     // Create a yookassa client by specifying the store ID and secret key
     yooclient := yookassa.NewClient('<Store ID>', '<Secret key>')
-    // Create a refund handler 
+    // Create a refund handler
     refundHandler := yookassa.NewRefundHandler(client)
     // We get a list of payment objects (the last 3 with the status succeeded)
     refunds, err := refundHandler.FindRefunds(&yoorefund.RefundListFilter{

@@ -7,39 +7,51 @@
     <h3 align="center">This product is used for managing payments under <a href="https://yookassa.ru/developers/api?lang=en">The YooKassa API</a>
     </h3>
     <p align="center">
-        <a href="README.md">Russian</a> | English 
+        <a href="README.md">Russian</a> | English
     </p>
 </div>
 
 ### Installation
-`go get github.com/rvinnie/yookassa-sdk-go`
+
+`go get github.com/backtrac3r/go-yookassa`
 
 ### Commencing work
+
 1. Import module
+
 ```golang
-import "github.com/rvinnie/yookassa-sdk-go"
+import "github.com/backtrac3r/go-yookassa"
 ```
+
 2. Configure a Client
+
 ```golang
-import "github.com/rvinnie/yookassa-sdk-go"
+import "github.com/backtrac3r/go-yookassa"
 
 func main() {
-    client := yookassa.NewClient('<Account Id>', '<Secret Key>')	
+    client := yookassa.NewClient('<Account Id>', '<Secret Key>')
 }
 ```
+
 3. Call the required API method. [More details in our documentation for the YooKassa API](https://yookassa.ru/developers/api?lang=en)
 
 ## Examples of using the API SDK
-#### [YooKassa SDK Settings](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/01-configuration.en.md)
-* [Authentication](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/01-configuration.en.md#Authentication)
-* [Getting information about the store](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/01-configuration.en.md#Getting-information-about-the-store)
-#### [Working with payments](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md)
-* [Request to create a payment](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md#Request-to-create-a-payment)
-* [Request for payment confirmation](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md#Request-for-payment-confirmation)
-* [Request to cancel an incomplete payment](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md#Request-to-cancel-an-incomplete-payment)
-* [Get payment information](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md#Get-payment-information)
-* [Get a list of payments with filtering](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/02-payments.en.md#Get-a-list-of-payments-with-filtering)
-#### [Working with refunds](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/03-refunds.en.md)
-* [Request to create a refund](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/03-refunds.en.md#Request-to-create-a-refund)
-* [Get refund information](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/03-refunds.en.md#Get-refund-information)
-* [Get a list of refunds with filtering](https://github.com/rvinnie/yookassa-sdk-go/blob/main/docs/examples/03-refunds.en.md#Get-a-list-of-refunds-with-filtering)
+
+#### [YooKassa SDK Settings](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/01-configuration.en.md)
+
+- [Authentication](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/01-configuration.en.md#Authentication)
+- [Getting information about the store](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/01-configuration.en.md#Getting-information-about-the-store)
+
+#### [Working with payments](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md)
+
+- [Request to create a payment](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md#Request-to-create-a-payment)
+- [Request for payment confirmation](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md#Request-for-payment-confirmation)
+- [Request to cancel an incomplete payment](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md#Request-to-cancel-an-incomplete-payment)
+- [Get payment information](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md#Get-payment-information)
+- [Get a list of payments with filtering](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/02-payments.en.md#Get-a-list-of-payments-with-filtering)
+
+#### [Working with refunds](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/03-refunds.en.md)
+
+- [Request to create a refund](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/03-refunds.en.md#Request-to-create-a-refund)
+- [Get refund information](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/03-refunds.en.md#Get-refund-information)
+- [Get a list of refunds with filtering](https://github.com/backtrac3r/go-yookassa/blob/main/docs/examples/03-refunds.en.md#Get-a-list-of-refunds-with-filtering)
