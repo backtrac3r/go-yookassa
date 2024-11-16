@@ -2,6 +2,7 @@
 package yoopayment
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -118,4 +119,15 @@ func (p *Payment) GetConfirmationURL() (string, error) {
 	}
 
 	return url, nil
+}
+
+// Реализация метода String()
+func (p *Payment) String() string {
+	// Сериализуем структуру в JSON с отступами для читаемости
+	data, err := json.MarshalIndent(p, "", "  ")
+	if err != nil {
+		// В случае ошибки возвратим простое строковое представление
+		return fmt.Sprintf("Payment{ID: %s, Status: %s}", p.ID, p.Status)
+	}
+	return string(data)
 }
