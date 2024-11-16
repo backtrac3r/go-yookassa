@@ -2,6 +2,7 @@
 package yoopayment
 
 import (
+	"fmt"
 	"time"
 
 	yoocommon "github.com/backtrac3r/go-yookassa/yookassa/common"
@@ -97,4 +98,24 @@ type Payment struct {
 	// The identifier of the customer in your system, such as email address or phone number.
 	// No more than 200 characters.
 	MerchantCustomerID string `json:"merchant_customer_id,omitempty" binding:"max=200"`
+}
+
+func (p *Payment) GetConfirmationURL() (string, error) {
+	if p.Confirmation == nil {
+		return "", fmt.Errorf("confirmation data is nil")
+	}
+
+	// Попробуем привести Confirmer к карте с ключами строкового типа
+	confMap, ok := p.Confirmation.(map[string]interface{})
+	if !ok {
+		return "", fmt.Errorf("unexpected type for Confirmation: %T", p.Confirmation)
+	}
+
+	// Извлекаем значение по ключу "confirmation_url"
+	url, ok := confMap["confirmation_url"].(string)
+	if !ok {
+		return "", fmt.Errorf("confirmation_url not found or is not a string")
+	}
+
+	return url, nil
 }
