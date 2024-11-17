@@ -73,6 +73,9 @@ type Payment struct {
 	// Availability of the option to make a refund via API.
 	Refundable bool `json:"refundable,omitempty"`
 
+	// For SBP
+	SavePaymentMethod bool `json:"save_payment_method,omitempty"`
+
 	// Status of receipt delivery.
 	ReceiptRegistration Status `json:"receipt_registration,omitempty"`
 
